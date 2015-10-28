@@ -19,7 +19,8 @@
 var app = {
     // Application Constructor
     initialize: function() {
-        this.bindEvents();
+      this.store = new MemoryStore();
+      $('.search-key').on('keyup', $.proxy(this.findByName, this));
     },
     // Bind Event Listeners
     //
